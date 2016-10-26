@@ -1,0 +1,14 @@
+llaves.sh
+env/
+*.pyc
+*.DCL
+*.ets
+*.log
+*.db
+.DS_Store
+static/.DS_Store
+.coverage
+.env
+.idea/
+latest.dump
+static/.DS_Store
