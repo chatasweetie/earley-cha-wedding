@@ -30,14 +30,14 @@ def index():
     return render_template("homepage.html")
 
 @app.route("/gallery")
-def index():
+def gallery():
     """Gallery"""
 
     return render_template("gallery.html")
 
 
 @app.route("/rsvp", methods=["POST"])
-def process_user_info():
+def process_rsvp():
     """recieves the rsvp data"""
 
     pass
@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
     app.debug = False
 
-    connect_to_db(app)
+    # connect_to_db(app)
 
     # Use the DebugToolbar
     DebugToolbarExtension(app)
