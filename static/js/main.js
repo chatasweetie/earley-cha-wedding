@@ -193,16 +193,17 @@ $('.select-wrap').on('click', 'select', function() {
 var map;
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map_canvas'), {
-		center: {lat: 37.794762, lng: -122.2805908},
+		center: {lat: 37.7946649, lng: -122.2771779},
 		zoom: 13,
 		scrollwheel: false,
 		mapTypeControl: false
 	});
-	var image = 'img/point.png';
+	var image = '/static/img/point.png';
 	var beachMarker = new google.maps.Marker({
-		position: {lat: 37.794758, lng: -122.278397},
+		position: {lat: 37.7946649, lng: -122.2771779},
 		map: map,
 		icon: image,
 		title:"WaterFront Hotel",
 	});
 }
+
