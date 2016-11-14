@@ -6,6 +6,8 @@ from flask import Flask, render_template, request, redirect
 from flask_debugtoolbar import DebugToolbarExtension
 from flask import send_from_directory
 
+from datetime import datetime
+
 
 app = Flask(__name__)
 
@@ -26,8 +28,13 @@ def favicon():
 @app.route("/")
 def index():
     """Homepage"""
+    year = datetime.now().year
 
-    return render_template("homepage.html")
+    if year > 2016:
+        year = '2016 - {}'.format(year)
+        
+
+    return render_template("homepage.html", year=year)
 
 @app.route("/gallery")
 def gallery():

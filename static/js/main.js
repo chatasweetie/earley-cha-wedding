@@ -193,17 +193,68 @@ $('.select-wrap').on('click', 'select', function() {
 var map;
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map_canvas'), {
-		center: {lat: 37.7946649, lng: -122.2771779},
+		center: {lat: 37.720155, lng: -122.2118086},
 		zoom: 13,
 		scrollwheel: false,
 		mapTypeControl: false
 	});
 	var image = '/static/img/point.png';
-	var beachMarker = new google.maps.Marker({
-		position: {lat: 37.7946649, lng: -122.2771779},
-		map: map,
-		icon: image,
-		title:"WaterFront Hotel",
-	});
+
+	var ceremonyString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading">Ceremony & Reception:</h4>'+
+      '<div id="bodyContent">'+
+      '<p>Fairview Metropolitan at the Metropolitan Golf course <br>'+
+      '<a href="https://www.google.com/maps/place/Fairview+Metropolitan/@37.720364,-122.193325,15z/data=!4m5!3m4!1s0x0:0x29c2a787b1a62845!8m2!3d37.720364!4d-122.193325">10051 Doolittle Dr., <br>Oakland, CA 94603</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+	  var cerermonyinfowindow = new google.maps.InfoWindow({
+	    content: ceremonyString
+	  });
+
+	  var cerermonyMarker = new google.maps.Marker({
+			position: {lat: 37.720364, lng: -122.193325},
+			map: map,
+			icon: image,
+			title:"Fairview Metropolitan",
+		});
+
+	  cerermonyMarker.addListener('click', function() {
+	    hotelinfowindow.close();
+	    cerermonyinfowindow.open(map, cerermonyMarker);
+	  });
+
+	  // 
+	  var hotelString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading">Accommodations:</h4>'+
+      '<div id="bodyContent">'+
+      '<p>Comfort Inn & Suites<br>'+
+      '<a href="https://www.google.com/maps/place/8452+Edes+Ave,+Oakland,+CA+94621/@37.740942,-122.1963012,17z/data=!3m1!4b1!4m5!3m4!1s0x808f859429742cd3:0xb72c359d098b779e!8m2!3d37.740942!4d-122.1941125">8452 Edes Ave., <br>Oakland, CA 94621</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+	  var hotelinfowindow = new google.maps.InfoWindow({
+	    content: hotelString
+	  });
+
+	  var hotelMarker = new google.maps.Marker({
+			position: {lat: 37.740942, lng: -122.1963012},
+			map: map,
+			icon: image,
+			title:"Comfort Inn & Suites",
+		});
+
+	  hotelMarker.addListener('click', function() {
+	  	cerermonyinfowindow.close();
+	    hotelinfowindow.open(map, hotelMarker);
+	  });
 }
+
+
 

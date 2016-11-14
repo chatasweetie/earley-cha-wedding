@@ -11,7 +11,7 @@ A Flask Wedding app
 
 **Application:** Python, Flask,    
 **Front-End**: HTML/CSS, Bootstrap, JQuery, JavaScript   
-
+**Front-End Template**: [ThemeForest](https://themeforest.net/item/wedding-tale-responsive-wedding-template/16850907)
 
 ### About the Developer    
 Jessica Dene Earley    
