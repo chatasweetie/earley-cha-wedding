@@ -23,7 +23,9 @@ Table of Contents:
 	3.10. Form
 	3.11. Location
 	3.12. Map
+	3.12.5 Registry
 	3.13. Footer
+	3.14
 4. Theme flowers
 5. Theme color
 ----------------------------------*/
@@ -890,6 +892,19 @@ select option {
 #map_canvas {
 	margin-bottom: -40px;
 }
+
+/* -3.13.5 Registry
+-------------------------------------------------------------- */
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+ }
+
+#small-text{
+ font-size: .7em;
+}
 /* -3.13. Footer
 -------------------------------------------------------------- */
 footer {
@@ -906,6 +921,13 @@ footer p {
 	border-color: #e4e4d7;
 	padding: 57px 0 30px;
 }
+
+/* -3.14. error
+-------------------------------------------------------------- */
+.error{
+	margin-top: 70px;
+}
+
 /* 4. Theme flowers
 ---------------------------------------------------------------*/
 .theme-flowers h2 {

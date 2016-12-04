@@ -199,6 +199,7 @@ function initMap() {
 		mapTypeControl: false
 	});
 	var image = '/static/img/point.png';
+	var hotel = 'http://maps.google.com/mapfiles/ms/micons/lodging.png';
 
 	var ceremonyString = '<div id="content">'+
       '<div id="siteNotice">'+
@@ -223,36 +224,97 @@ function initMap() {
 		});
 
 	  cerermonyMarker.addListener('click', function() {
-	    hotelinfowindow.close();
+	    comfortinfowindow.close();
+	    holidayinfowindow.close();
+	    qualityinfowindow.close();
 	    cerermonyinfowindow.open(map, cerermonyMarker);
 	  });
 
-	  // 
-	  var hotelString = '<div id="content">'+
+	  // Comfort Inn & Suites
+	  var comfortString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h4 id="firstHeading" class="firstHeading">Accommodations:</h4>'+
+      '<h4 id="firstHeading" class="firstHeading">Comfort Inn & Suites</h4>'+
       '<div id="bodyContent">'+
-      '<p>Comfort Inn & Suites<br>'+
-      '<a href="https://www.google.com/maps/place/8452+Edes+Ave,+Oakland,+CA+94621/@37.740942,-122.1963012,17z/data=!3m1!4b1!4m5!3m4!1s0x808f859429742cd3:0xb72c359d098b779e!8m2!3d37.740942!4d-122.1941125">8452 Edes Ave., <br>Oakland, CA 94621</a>'+
+      '<p>8452 Edes Ave., <br>Oakland, CA 94621</a>'+
       '</p>'+
       '</div>'+
       '</div>';
 
-	  var hotelinfowindow = new google.maps.InfoWindow({
-	    content: hotelString
+	  var comfortinfowindow = new google.maps.InfoWindow({
+	    content: comfortString
 	  });
 
-	  var hotelMarker = new google.maps.Marker({
+	  var comfortMarker = new google.maps.Marker({
 			position: {lat: 37.740942, lng: -122.1963012},
 			map: map,
-			icon: image,
+			icon: hotel,
 			title:"Comfort Inn & Suites",
 		});
 
-	  hotelMarker.addListener('click', function() {
+	  comfortMarker.addListener('click', function() {
 	  	cerermonyinfowindow.close();
-	    hotelinfowindow.open(map, hotelMarker);
+	  	holidayinfowindow.close();
+	  	qualityinfowindow.close();
+	    comfortinfowindow.open(map, comfortMarker);
+	  });
+
+	  // Holiday Inn
+	  var holidayString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading">Holiday Inn Hotel & Suites</h4>'+
+      '<div id="bodyContent">'+
+      '<p>77 Hegenberger Rd,<br>Oakland, CA 94621<p>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+	  var holidayinfowindow = new google.maps.InfoWindow({
+	    content: holidayString
+	  });
+
+	  var holidayMarker = new google.maps.Marker({
+			position: {lat: 37.7292139, lng: -122.2013193},
+			map: map,
+			icon: hotel,
+			title:"Holiday Inn & Suites",
+		});
+
+	  holidayMarker.addListener('click', function() {
+	  	comfortinfowindow.close();
+	  	cerermonyinfowindow.close();
+	  	qualityinfowindow.close();
+	    holidayinfowindow.open(map, holidayMarker);
+	  });
+
+	  // Quality Inn
+	  var qualityString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading">Quality Inn</h4>'+
+      '<div id="bodyContent">'+
+      '<p>8471 Enterprise Way,<br>Oakland, CA 94621</p>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+	  var qualityinfowindow = new google.maps.InfoWindow({
+	    content: qualityString
+	  });
+
+	  var qualityMarker = new google.maps.Marker({
+			position: {lat: 37.7420362, lng: -122.1933108},
+			map: map,
+			icon: hotel,
+			title:"Quality Inn",
+		});
+
+	  qualityMarker.addListener('click', function() {
+	  	comfortinfowindow.close();
+	  	cerermonyinfowindow.close();
+	  	holidayinfowindow.close();
+	    qualityinfowindow.open(map, holidayMarker);
 	  });
 }
 
