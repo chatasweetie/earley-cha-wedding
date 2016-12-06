@@ -893,18 +893,6 @@ select option {
 	margin-bottom: -40px;
 }
 
-/* -3.13.5 Registry
--------------------------------------------------------------- */
-.center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 160px;
- }
-
-#small-text{
- font-size: .7em;
-}
 /* -3.13. Footer
 -------------------------------------------------------------- */
 footer {
@@ -1462,4 +1450,17 @@ footer p {
 a {
 	
 	color: #690085;
+}
+
+/* -3.13.5 Registry
+-------------------------------------------------------------- */
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+ }
+
+#small-text{
+ font-size: .7em;
 }
